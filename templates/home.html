@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Movie Sentiment Analyser</title>
+</head>
+
+<body>
+    {% extends "template.html" %} {% block content %}
+
+    <h1> CSDA 1040 - Group 4 </h1>
+    <p> -Soyuz, Rotchelle, Elna, Rahul </p>
+
+    <h2> Provide sentiment of following movie review - </h2>
+    <p>Overall, I can say now that the “Isle of Dogs” has probably become the first cartoon in my life that I truly liked. I admit that I would not have watched it if Wes Anderson’s name was not on it, but I am glad I did. The “Isle of Dogs” is a fine example
+        of taste, talent, and hard work put together. A great movie to watch on your own or with your family.</p>
+
+    <div class="login">
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="POST">
+            <!--<input type="text" name="movieinput" placeholder="Which movie do you like?" /> -->
+            <button type="submit" class="btn btn-primary btn-block btn-large">Sentiment</button>
+        </form>
+
+        <br>
+        <br> {{ prediction_text }}
+    </div>
+    {% endblock %}
+</body>
+
+</html>
